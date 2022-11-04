@@ -62,7 +62,7 @@ df1 = ss.transform(df[ss_list])
 st.write('---')
 
 # Load the saved model
-loaded_model = pickle.load(open('ridge_model.sav', 'rb'))
+loaded_model = pickle.load(open('housing/ridge_model.sav', 'rb'))
 
 # Apply Model to Make Prediction
 prediction = int(loaded_model.predict(df1))
