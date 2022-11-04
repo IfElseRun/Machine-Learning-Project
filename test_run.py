@@ -39,16 +39,13 @@ def features_from_user():
 
     
     data = {
-            'Age_built': house_age,
+            'House_Age': house_age,
             'Garage Area': garage_area,
-            '1st Flr SF': train_df['1st Flr SF'].loc[0],
             'Overall Qual': overall_qual,
             'Full Bath': fullbath,
-            'Age_garage': garage_age,
-            'Gr Liv Area': gr_liv_area,
-            'Total Bsmt SF': train_df['Total Bsmt SF'].loc[0],
-            'Garage Cars': train_df['Garage Cars'].loc[0],
-            'Mas Vnr Area': train_df['Mas Vnr Area'].loc[0]}
+            'Garage_Age': garage_age,
+            'Gr Liv Area': gr_liv_area
+          }
     
     input_data = pd.DataFrame(data, index=[0])
     
@@ -56,7 +53,7 @@ def features_from_user():
     
     
 df = features_from_user()
-ss_list = ['Age_built','Garage Area','1st Flr SF','Overall Qual','TotRms AbvGrd','Full Bath','Age_garage','Gr Liv Area','Total Bsmt SF','Garage Cars','Mas Vnr Area']
+ss_list = ['House_Age','Garage Area','Overall Qual','Full Bath','Garage_Age','Gr Liv Area']
 
 ss = StandardScaler()
 X_train_sc = ss.fit_transform(X[ss_list])
