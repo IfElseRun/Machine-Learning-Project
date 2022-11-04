@@ -9,11 +9,7 @@ In this project I examined a comprehensive housing dataset from the city of Ames
 
 ## About Data Set
 
-The Ames Housing Dataset is an open source dataset that contains information on residentials home sales in Ames, Iowa in the USA between 2006 and 2010. The data contains attributes that every home buyer would like to know as neighborhood, year when the house was built, garage area and so on. 
-
-
-
-
+The Ames Housing Dataset is an open source dataset that contains information on residentials home sales in Ames, Iowa in the USA between 2006 and 2010. The data contains attributes that every home buyer would like to know as neighborhood in which house is located, year when the house was built, garage area and so on. 
 
 
 ### Data Source : [KAGGLE](https://www.kaggle.com/datasets/marcopale/housing)
