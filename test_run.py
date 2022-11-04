@@ -18,9 +18,9 @@ Play with the values via the sliders on the left panel to generate new predictio
 
 st.write("---")
 
-train_df = pd.read_csv('/housing/df_final.csv')
+train_df = pd.read_csv('housing/df_final.csv')
 train_df = train_df.drop('Unnamed: 0', axis=1)
-test_df = pd.read_csv('/housing/test_df_final.csv')
+test_df = pd.read_csv('housing/test_df_final.csv')
 test_df = test_df.drop('Unnamed: 0', axis=1)
 
 feature_list = list(train_df.columns)
@@ -32,23 +32,22 @@ y = train_df['SalePrice']
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
-    house_age = st.sidebar.slider('House Age', int(train_df['Age_built'].min()), int(train_df['Age_built'].max()), int(train_df['Age_built'].mean()))
+    house_age = st.sidebar.slider('House Age', int(train_df['House_Age'].min()), int(train_df['House_Age'].max()), int(train_df['House_Age'].mean()))
     gr_liv_area = st.sidebar.slider('Living Area', int(train_df['Gr Liv Area'].min()), int(train_df['Gr Liv Area'].max()), int(train_df['Gr Liv Area'].mean()))
     overall_qual = st.sidebar.slider('Overall Quality', int(train_df['Overall Qual'].min()), int(train_df['Overall Qual'].max()), int(train_df['Overall Qual'].mean()))
-    totrms = st.sidebar.slider('Total room above grade', int(train_df['TotRms AbvGrd'].min()), int(train_df['TotRms AbvGrd'].max()), int(train_df['TotRms AbvGrd'].mean()))
+    totrms = st.sidebar.slider('Total room above grade', int(train_df['Mas Vnr Area'].min()), int(train_df['Mas Vnr Area'].max()), int(train_df['Mas Vnr Area'].mean()))
     fullbath = st.sidebar.slider('Full bathrooms above grade', int(train_df['Full Bath'].min()), int(train_df['Full Bath'].max()), int(train_df['Full Bath'].mean()))
-    garage_age = st.sidebar.slider('Garage Age', int(train_df['Age_garage'].min()), int(train_df['Age_garage'].max()), int(train_df['Age_garage'].mean()))
+    garage_age = st.sidebar.slider('Garage Age', int(train_df['Garage_Age'].min()), int(train_df['Garage_Age'].max()), int(train_df['Garage_Age'].mean()))
     garage_area = st.sidebar.slider('Garage Area', int(train_df['Garage Area'].min()), int(train_df['Garage Area'].max()), int(train_df['Garage Area'].mean()))
 
     
     data = {'Id': train_df['Id'].loc[0],
-            'Age_built': house_age,
+            'House_Age': house_age,
             'Garage Area': garage_area,
             '1st Flr SF': train_df['1st Flr SF'].loc[0],
             'Overall Qual': overall_qual,
-            'TotRms AbvGrd': totrms,
             'Full Bath': fullbath,
-            'Age_garage': garage_age,
+            'Garage_Age': garage_age,
             'Gr Liv Area': gr_liv_area,
             'Total Bsmt SF': train_df['Total Bsmt SF'].loc[0],
             'Garage Cars': train_df['Garage Cars'].loc[0],
@@ -60,7 +59,7 @@ def features_from_user():
     
     
 df = features_from_user()
-ss_list = ['Id','Age_built','Garage Area','1st Flr SF','Overall Qual','TotRms AbvGrd','Full Bath','Age_garage','Gr Liv Area','Total Bsmt SF','Garage Cars','Mas Vnr Area']
+ss_list = ['Id','House_Age','Garage Area','1st Flr SF','Overall Qual','Mas Vnr Area','Full Bath','Garage_Age','Gr Liv Area','Total Bsmt SF','Garage Cars']
 
 ss = StandardScaler()
 X_train_sc = ss.fit_transform(X[ss_list])
