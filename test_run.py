@@ -19,9 +19,7 @@ Play with the values via the sliders on the left panel to generate new predictio
 st.write("---")
 
 train_df = pd.read_csv('housing/df_final.csv')
-train_df = train_df.drop('Unnamed: 0', axis=1)
 test_df = pd.read_csv('housing/test_df_final.csv')
-test_df = test_df.drop('Unnamed: 0', axis=1)
 
 feature_list = list(train_df.columns)
 feature_list.remove('SalePrice')
