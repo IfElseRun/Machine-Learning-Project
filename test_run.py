@@ -43,7 +43,6 @@ def features_from_user():
             'Garage Area': garage_area,
             '1st Flr SF': train_df['1st Flr SF'].loc[0],
             'Overall Qual': overall_qual,
-            'TotRms AbvGrd': totrms,
             'Full Bath': fullbath,
             'Age_garage': garage_age,
             'Gr Liv Area': gr_liv_area,
