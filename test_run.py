@@ -69,7 +69,6 @@ ss = StandardScaler()
 X_train_sc = ss.fit_transform(X[ss_list])
 df1 = ss.transform(df[ss_list])
 
-st.write('---')
 
 # Load the saved model
 loaded_model = pickle.load(open('ridge_model.sav', 'rb'))
