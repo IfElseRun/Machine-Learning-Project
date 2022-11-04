@@ -33,9 +33,8 @@ def features_from_user():
     house_age = st.sidebar.slider('House Age', int(train_df['House_Age'].min()), int(train_df['House_Age'].max()), int(train_df['House_Age'].mean()))
     gr_liv_area = st.sidebar.slider('Living Area', int(train_df['Gr Liv Area'].min()), int(train_df['Gr Liv Area'].max()), int(train_df['Gr Liv Area'].mean()))
     overall_qual = st.sidebar.slider('Overall Quality', int(train_df['Overall Qual'].min()), int(train_df['Overall Qual'].max()), int(train_df['Overall Qual'].mean()))
-    totrms = st.sidebar.slider('Total room above grade', int(train_df['TotRms AbvGrd'].min()), int(train_df['TotRms AbvGrd'].max()), int(train_df['TotRms AbvGrd'].mean()))
     fullbath = st.sidebar.slider('Full bathrooms above grade', int(train_df['Full Bath'].min()), int(train_df['Full Bath'].max()), int(train_df['Full Bath'].mean()))
-    garage_age = st.sidebar.slider('Garage Age', int(train_df['Age_garage'].min()), int(train_df['Age_garage'].max()), int(train_df['Age_garage'].mean()))
+    garage_age = st.sidebar.slider('Garage Age', int(train_df['Garage_Age'].min()), int(train_df['Garage_Age'].max()), int(train_df['Garage_Age'].mean()))
     garage_area = st.sidebar.slider('Garage Area', int(train_df['Garage Area'].min()), int(train_df['Garage Area'].max()), int(train_df['Garage Area'].mean()))
 
     
