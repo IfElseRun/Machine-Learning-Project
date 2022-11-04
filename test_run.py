@@ -38,7 +38,7 @@ def features_from_user():
     garage_area = st.sidebar.slider('Garage Area', int(train_df['Garage Area'].min()), int(train_df['Garage Area'].max()), int(train_df['Garage Area'].mean()))
 
     
-    data = {'Id': train_df['Id'].loc[0],
+    data = {
             'Age_built': house_age,
             'Garage Area': garage_area,
             '1st Flr SF': train_df['1st Flr SF'].loc[0],
@@ -57,7 +57,7 @@ def features_from_user():
     
     
 df = features_from_user()
-ss_list = ['Id','Age_built','Garage Area','1st Flr SF','Overall Qual','TotRms AbvGrd','Full Bath','Age_garage','Gr Liv Area','Total Bsmt SF','Garage Cars','Mas Vnr Area']
+ss_list = ['Age_built','Garage Area','1st Flr SF','Overall Qual','TotRms AbvGrd','Full Bath','Age_garage','Gr Liv Area','Total Bsmt SF','Garage Cars','Mas Vnr Area']
 
 ss = StandardScaler()
 X_train_sc = ss.fit_transform(X[ss_list])
