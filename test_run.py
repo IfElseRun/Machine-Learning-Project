@@ -30,7 +30,7 @@ y = train_df['SalePrice']
 st.sidebar.header('Specify Input Parameters - these will determine the predicted value.')
 
 def features_from_user():
-    house_age = st.sidebar.slider('House Age', int(train_df['Age_built'].min()), int(train_df['Age_built'].max()), int(train_df['Age_built'].mean()))
+    house_age = st.sidebar.slider('House Age', int(train_df['House_Age'].min()), int(train_df['House_Age'].max()), int(train_df['Age_built'].mean()))
     gr_liv_area = st.sidebar.slider('Living Area', int(train_df['Gr Liv Area'].min()), int(train_df['Gr Liv Area'].max()), int(train_df['Gr Liv Area'].mean()))
     overall_qual = st.sidebar.slider('Overall Quality', int(train_df['Overall Qual'].min()), int(train_df['Overall Qual'].max()), int(train_df['Overall Qual'].mean()))
     totrms = st.sidebar.slider('Total room above grade', int(train_df['TotRms AbvGrd'].min()), int(train_df['TotRms AbvGrd'].max()), int(train_df['TotRms AbvGrd'].mean()))
