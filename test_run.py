@@ -18,9 +18,9 @@ Play with the values via the sliders on the left panel to generate new predictio
 
 st.write("---")
 
-train_df = pd.read_csv('C:/Users/adnalakisic/Desktop/Machine-Learning-Project/housing/df_final.csv')
+train_df = pd.read_csv('/housing/df_final.csv')
 train_df = train_df.drop('Unnamed: 0', axis=1)
-test_df = pd.read_csv('C:/Users/adnalakisic/Desktop/Machine-Learning-Project/housing/test_df_final.csv')
+test_df = pd.read_csv('/housing/test_df_final.csv')
 test_df = test_df.drop('Unnamed: 0', axis=1)
 
 feature_list = list(train_df.columns)
@@ -69,7 +69,7 @@ df1 = ss.transform(df[ss_list])
 st.write('---')
 
 # Load the saved model
-loaded_model = pickle.load(open('C:/Users/adnalakisic/Desktop/Machine-Learning-Project/ridge_model.sav', 'rb'))
+loaded_model = pickle.load(open('ridge_model.sav', 'rb'))
 
 # Apply Model to Make Prediction
 prediction = int(loaded_model.predict(df1))
