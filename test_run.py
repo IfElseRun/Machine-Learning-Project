@@ -12,7 +12,6 @@ st.write("""
 # Ames Housing Prices
 ------------
 This app predicts Ames Housing Prices using a machine learning model powered by [Scikit Learn](https://scikit-learn.org/).
-The data for the model is the famous [Ames Housing Prices](https://www.kaggle.com/competitions/dsi-us-11-project-2-regression-challenge/data) Dataset.
 Play with the values via the sliders on the left panel to generate new predictions.
 """)
 
